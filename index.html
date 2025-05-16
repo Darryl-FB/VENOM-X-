@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VENOM-X | Indicateur de trading ultime</title>
+  <style>
+    body {
+      background-color: #0b0b0b;
+      color: #f0f0f0;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+    .main-content {
+      flex: 2;
+      min-width: 300px;
+      margin-right: 20px;
+    }
+    .sidebar {
+      flex: 1;
+      min-width: 280px;
+      max-height: 600px;
+      overflow-y: auto;
+      background-color: #161616;
+      padding: 15px;
+      border-radius: 10px;
+    }
+    header {
+      text-align: center;
+      padding: 60px 0 30px;
+      width: 100%;
+    }
+    .title-box {
+      margin-top: 80px;
+      background-color: white;
+      border: 4px solid white;
+      display: inline-block;
+      padding: 30px 60px;
+      border-radius: 12px;
+    }
+    .title-box h1 {
+      margin: 0;
+      font-size: 4em;
+      color: black;
+      text-transform: uppercase;
+      letter-spacing: 8px;
+    }
+    .market-line {
+      font-size: 1.5em;
+      color: #00ff88;
+      margin-top: 10px;
+      letter-spacing: 2px;
+    }
+    .mt4-note {
+      color: #ccc;
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+    .price {
+      font-size: 24px;
+      color: #00ff88;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+    .section {
+      background-color: #161616;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 20px rgba(0, 255, 136, 0.1);
+    }
+    .button {
+      background-color: #00ff88;
+      color: #000;
+      padding: 12px 24px;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 20px;
+    }
+    .button:hover {
+      background-color: #00cc6b;
+    }
+    .review {
+      background-color: #1f1f1f;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      font-size: 16px;
+      box-shadow: 0 4px 8px rgba(0, 255, 136, 0.2);
+    }
+    .review .stars {
+      color: gold;
+      font-size: 18px;
+    }
+    .review p {
+      font-style: italic;
+      margin-top: 10px;
+    }
+    .review .name {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    form input, form textarea, form select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      background-color: #1f1f1f;
+      color: white;
+      border: 1px solid #444;
+      border-radius: 6px;
+    }
+    form input[type="submit"] {
+      background-color: #00ff88;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    form input[type="submit"]:hover {
+      background-color: #00cc6b;
+    }
+    footer {
+      text-align: center;
+      font-size: 13px;
+      color: #666;
+      margin-top: 40px;
+      padding-bottom: 20px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="title-box">
+      <h1>VENOM-X</h1>
+    </div>
+    <div class="market-line">L'arme ultime pour dominer le marché Forex</div>
+    <p class="mt4-note">Compatible uniquement sur MT4</p>
+  </header>
+
+  <div class="container">
+    <div class="main-content">
+      <div class="section">
+        <p><strong>Venom-X</strong> est un indicateur avancé conçu pour détecter les retournements de tendance sur le <strong>marché Forex</strong>.</p>
+        <p>Développé par <strong>Darryl FB</strong> de la <strong>FB Académie</strong>, il affiche un taux de précision de plus de <strong>95%</strong>.</p>
+        <ul>
+          <li>Détection automatique des swings à fort potentiel</li>
+          <li>Utilisable même sans expérience</li>
+          <li>Fini les analyses complexes</li>
+          <li>Un simple PC, Internet et Venom-X suffisent</li>
+        </ul>
+        <p><strong>Important :</strong> Venom-X n’est pas compatible avec les cryptomonnaies ni avec les indices tels que <strong>US100, US30, US500, DE30</strong>.</p>
+        <p>Inclus : guide PDF complet pour une utilisation pas à pas.</p>
+        <div class="price">Prix : 365 €</div>
+        <p><strong>Méthodes de paiement :</strong><br> Cryptomonnaie, Perfect Money, Carte bancaire, Paiement mobile (Afrique)</p>
+
+        <div style="display:flex; align-items:center; gap:10px; margin-top:20px;">
+          <span style="font-size: 16px;">Choisir un moyen de paiement :</span>
+          <select id="payment-method" style="padding:10px;">
+            <option value="Cryptomonnaie">Cryptomonnaie</option>
+            <option value="Perfect Money">Perfect Money</option>
+            <option value="Carte bancaire">Carte bancaire</option>
+            <option value="Paiement mobile (Afrique)">Paiement mobile (Afrique)</option>
+          </select>
+        </div>
+        <br>
+        <a id="whatsapp-link" class="button" target="_blank">Procéder à l'achat via WhatsApp</a>
+        <script>
+          document.getElementById("whatsapp-link").addEventListener("click", function(e) {
+            var method = document.getElementById("payment-method").value;
+            var baseURL = "https://wa.me/237687276284?text=";
+            var message = encodeURIComponent("Bonjour, je souhaite acheter l'indicateur Venom-X au prix de 365€ via " + method);
+            this.href = baseURL + message;
+          });
+        </script>
+      </div>
+
+      <div class="section">
+        <h3>Ajouter votre avis</h3>
+        <form onsubmit="event.preventDefault(); alert('Merci pour votre avis !');">
+          <input type="text" name="name" placeholder="Votre nom" required>
+          <textarea name="message" placeholder="Votre avis..." required></textarea>
+          <select name="stars" required>
+            <option value="">Note (1 à 6 étoiles)</option>
+            <option value="6">★★★★★★</option>
+            <option value="5">★★★★★☆</option>
+            <option value="4">★★★★☆☆</option>
+            <option value="3">★★★☆☆☆</option>
+            <option value="2">★★☆☆☆☆</option>
+            <option value="1">★☆☆☆☆☆</option>
+          </select>
+          <input type="submit" value="Envoyer l'avis">
+        </form>
+      </div>
+    </div>
+
+    <aside class="sidebar">
+      <h3>Avis clients</h3>
+      <!-- Avis clients inchangés -->
+      <div class="review"><div class="stars">★★★★★★</div><p>"Venom-X a changé ma façon de trader. Facile à utiliser et très rentable."</p><div class="name">– Alex M.</div></div>
+      <div class="review"><div class="stars">★★★★★☆</div><p>"Un vrai bijou pour détecter les swings. Je recommande."</p><div class="name">– Nadia K.</div></div>
+      <div class="review"><div class="stars">★★★★★★</div><p>"Un outil pro à la portée de tous. Mon compte a doublé !"</p><div class="name">– Yvan T.</div></div>
+      <div class="review"><div class="stars">★★★★☆☆</div><p>"J'ai eu un peu de mal au début, mais maintenant je l'utilise tous les jours."</p><div class="name">– Salif B.</div></div>
+      <div class="review"><div class="stars">★★★★★☆</div><p>"Les signaux sont très précis. Je me sens beaucoup plus confiante."</p><div class="name">– Aïcha L.</div></div>
+      <div class="review"><div class="stars">★★★★★★</div><p>"L’indicateur le plus fiable que j’ai testé. Je regrette de ne pas l’avoir acheté plus tôt !"</p><div class="name">– Didier N.</div></div>
+    </aside>
+  </div>
+
+  <footer>
+    © 2025 Venom-X – Tous droits réservés.
+  </footer>
+</body>
+</html>
